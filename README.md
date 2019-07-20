@@ -1,3 +1,9 @@
+
+
+**NB**: this is a fork of [sausaw/react-native-tcp](https://github.com/sausaw/react-native-tcp)
+
+
+
 # TCP in React Native
 
 node's [net](https://nodejs.org/api/net.html) API in React Native
@@ -11,12 +17,7 @@ This module is used by [Peel](http://www.peel.com/)
 * In your project dir:
 
 ```
-npm install react-native-tcp --save
-```
-
-__Note for iOS:__ If your react-native version < 0.40 install with this tag instead:
-```
-npm install react-native-tcp@3.1.0 --save
+npm install --save https://github.com/MaximusBaton/react-native-tcp.git
 ```
 
 ## if using Cocoapods
