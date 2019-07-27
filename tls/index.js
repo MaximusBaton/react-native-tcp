@@ -25,7 +25,7 @@ exports.connect = exports.createConnection = function() : Socket {
   }
   var tcpSocket = new Socket();
   tcpSocket._enableSsl()
-  console.log('creating new tls', arguments);
+  if (__DEV__) { console.log('creating new tls', arguments); }
   return Socket.prototype.connect.apply(tcpSocket, tcpSocket._normalizeConnectArgs(arguments));
 };
 
