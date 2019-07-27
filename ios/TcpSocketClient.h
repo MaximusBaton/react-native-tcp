@@ -27,6 +27,7 @@ typedef enum RCTTCPError RCTTCPError;
 @protocol SocketClientDelegate <NSObject>
 
 - (void)onConnect:(TcpSocketClient*)client;
+- (void)onSecureConnect:(TcpSocketClient*)client;
 - (void)onConnection:(TcpSocketClient*)client toClient:(NSNumber *)clientID;
 - (void)onData:(NSNumber *)clientID data:(NSData *)data;
 - (void)onClose:(TcpSocketClient*)client withError:(NSError *)err;

@@ -15,7 +15,7 @@
 #define COUNTER_OFFSET 5000
 
 @interface TcpSockets() {
-    
+
 @private
     NSMutableDictionary<NSNumber *, RCTResponseSenderBlock> *_pendingSends;
     NSLock *_lock;
@@ -34,7 +34,7 @@ RCT_EXPORT_MODULE()
 + (BOOL)requiresMainQueueSetup {
     return NO;
 }
-  
+
 
 - (id)init {
     self = [super init];
@@ -55,7 +55,8 @@ RCT_EXPORT_MODULE()
              @"connection",
              @"data",
              @"close",
-             @"error"];
+             @"error",
+             @"secureConnect"];
 }
 
 - (void)startObserving {
@@ -152,6 +153,12 @@ RCT_EXPORT_METHOD(listen:(nonnull NSNumber*)cId
 - (void)onConnect:(TcpSocketClient*) client
 {
     [self sendEventWithName:@"connect"
+                       body:@{ @"id": client.id, @"address" : [client getAddress] }];
+}
+
+- (void)onSecureConnect:(TcpSocketClient*) client
+{
+    [self sendEventWithName:@"secureConnect"
                        body:@{ @"id": client.id, @"address" : [client getAddress] }];
 }
 
