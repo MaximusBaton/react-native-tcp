@@ -47,7 +47,7 @@ repositories {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     testImplementation 'junit:junit:4.12'    
-    implementation 'androidx.appcompat:appcompat:${safeExtGet('supportxLibVersion', '1.0.0')}'
+    implementation "androidx.appcompat:appcompat:${safeExtGet('supportxLibVersion', '1.0.0')}"
     implementation "com.facebook.react:react-native:+" // From node_modules
     implementation 'com.koushikdutta.async:androidasync:2.+'
 }
